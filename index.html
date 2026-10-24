@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>دعوة عقد قران</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f8f1e6;--card:#fffdf9;--ink:#3b2f22;--muted:#7a6a58;--gold:#b08a3e;--line:#e8dcc4;--on-gold:#fff;--rose:#d9667f;--rose2:#b04560;--rose3:#f0a4b4;--leaf:#7d9c76;--gem:#fff;--glow1:rgba(240,164,180,.35);--glow2:rgba(214,178,110,.30);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#14110d;--card:#1e1a14;--ink:#f1e8d6;--muted:#b9a98e;--gold:#d4ac5c;--line:#3a3226;--on-gold:#1a1408;--rose:#d9667f;--rose2:#f0a4b4;--rose3:#b04560;--leaf:#5f7f5a;--gem:#fff6d8;--glow1:rgba(176,69,96,.30);--glow2:rgba(212,172,92,.18);color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#14110d;--card:#1e1a14;--ink:#f1e8d6;--muted:#b9a98e;--gold:#d4ac5c;--line:#3a3226;--on-gold:#1a1408;--rose:#d9667f;--rose2:#f0a4b4;--rose3:#b04560;--leaf:#5f7f5a;--gem:#fff6d8;--glow1:rgba(176,69,96,.30);--glow2:rgba(212,172,92,.18);color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Tajawal',Tahoma,sans-serif;min-height:100vh;overflow-x:hidden}
+.bg{position:fixed;inset:-25%;z-index:0;pointer-events:none;background:radial-gradient(circle at 25% 25%,var(--glow1),transparent 45%),radial-gradient(circle at 75% 70%,var(--glow2),transparent 45%),radial-gradient(circle at 70% 20%,var(--glow1),transparent 35%);animation:drift 22s ease-in-out infinite alternate}
+@keyframes drift{to{transform:rotate(14deg) scale(1.15)}}
+.fx{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.fx .p{position:absolute;top:-40px;opacity:.75;animation:fall linear infinite}
+.fx .p svg{display:block;width:100%;height:100%;fill:var(--rose3)}
+@keyframes fall{0%{transform:translate3d(0,-10vh,0) rotate(0)}50%{transform:translate3d(var(--dx),55vh,0) rotate(200deg)}100%{transform:translate3d(calc(var(--dx)*-1),115vh,0) rotate(400deg)}}
+.fx .s{position:absolute;width:4px;height:4px;border-radius:50%;background:var(--gold);animation:tw 3.2s ease-in-out infinite}
+@keyframes tw{0%,100%{opacity:0;transform:scale(.4)}50%{opacity:.9;transform:scale(1.3)}}
+.screen{position:relative;z-index:1;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:28px 20px}
+#intro{position:fixed;inset:0;z-index:5;transition:opacity .8s,visibility .8s}
+#intro.hide{opacity:0;visibility:hidden}
+.env{width:min(340px,100%);text-align:center}
+.rings{width:170px;height:auto;display:block;margin:0 auto 6px;filter:drop-shadow(0 6px 14px rgba(176,138,62,.35));animation:float 4s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-8px)}}
+.gem{animation:tw 2.4s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+.mono{font-family:'Amiri',serif;color:var(--gold);font-size:30px;margin:0 0 22px;letter-spacing:2px}
+.env .to{color:var(--muted);margin:0 0 4px}
+.env .guest{font-family:'Amiri',serif;font-size:27px;margin:0 0 24px;min-height:1em}
+button,.btn{font-family:inherit;font-size:17px;border:0;border-radius:999px;padding:13px 32px;background:var(--gold);color:var(--on-gold);cursor:pointer;text-decoration:none;display:inline-block;box-shadow:0 6px 18px rgba(176,138,62,.35)}
+.btn.alt{background:transparent;color:var(--gold);border:1px solid var(--gold);box-shadow:none}
+#page{opacity:0;transform:translateY(16px);transition:opacity .9s .25s,transform .9s .25s}
+#page.show{opacity:1;transform:none}
+.card{position:relative;overflow:hidden;max-width:480px;width:100%;background:var(--card);border:1px solid var(--line);border-radius:24px;padding:54px 28px 48px;text-align:center;outline:1px solid var(--line);outline-offset:-10px;box-shadow:0 20px 50px rgba(0,0,0,.10)}
+.corner{position:absolute;width:150px;height:150px;top:-4px;right:-4px;transform-origin:100% 0;animation:sway 6s ease-in-out infinite alternate}
+.corner.b{top:auto;right:auto;bottom:-4px;left:-4px;transform:rotate(180deg);transform-origin:0 100%;animation-name:sway2}
+@keyframes sway{to{transform:rotate(3deg)}}
+@keyframes sway2{from{transform:rotate(180deg)}to{transform:rotate(183deg)}}
+.card>*:not(.corner){position:relative;z-index:1}
+.bism{font-family:'Amiri',serif;color:var(--gold);font-size:22px;margin:0 0 14px}
+.verse{font-family:'Amiri',serif;font-size:18px;line-height:2;color:var(--muted);margin:0 0 18px}
+.rg{width:88px;display:block;margin:0 auto 4px}
+h1{font-family:'Amiri',serif;font-size:34px;margin:0 0 4px;background:linear-gradient(100deg,var(--gold) 30%,var(--rose) 50%,var(--gold) 70%);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 6s linear infinite}
+@keyframes shine{to{background-position:-250% 0}}
+.orn{display:flex;align-items:center;gap:10px;margin:6px 0 16px}
+.orn:before,.orn:after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}
+.orn:after{transform:scaleX(-1)}
+.orn svg{width:26px;height:26px}
+.sub{color:var(--muted);margin:0 0 18px;line-height:1.8}
+.names{font-family:'Amiri',serif;font-size:32px;font-weight:700;line-height:1.5;margin:0 0 6px}
+.names i{display:block;font-style:normal;color:var(--rose);font-size:22px}
+.fam{color:var(--muted);font-size:14px;margin:0 0 22px}
+.count{display:flex;gap:10px;justify-content:center;margin:0 0 22px}
+.count div{flex:1;max-width:84px;border:1px solid var(--line);border-radius:14px;padding:10px 0;background:var(--bg)}
+.count b{display:block;font-size:24px;color:var(--gold)}
+.count span{font-size:12px;color:var(--muted)}
+.row{border-top:1px solid var(--line);padding:14px 0}
+.row small{display:block;color:var(--rose);font-size:13px;margin-bottom:3px}
+.row div{font-size:18px}
+.row p{margin:2px 0 0;color:var(--muted);font-size:14px}
+.actions{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:20px}
+.foot{margin-top:20px;color:var(--muted);font-size:15px;line-height:1.8}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<!-- رسومات SVG قابلة لإعادة الاستخدام -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<defs>
+  <symbol id="rose" viewBox="-50 -50 100 100">
+    <g fill="var(--rose)" stroke="var(--rose2)" stroke-width="1.2">
+      <ellipse rx="21" ry="29" cy="-16"/><ellipse rx="21" ry="29" cy="-16" transform="rotate(72)"/><ellipse rx="21" ry="29" cy="-16" transform="rotate(144)"/><ellipse rx="21" ry="29" cy="-16" transform="rotate(216)"/><ellipse rx="21" ry="29" cy="-16" transform="rotate(288)"/>
+    </g>
+    <g fill="var(--rose3)" stroke="var(--rose2)" stroke-width="1">
+      <ellipse rx="14" ry="19" cy="-9" transform="rotate(36)"/><ellipse rx="14" ry="19" cy="-9" transform="rotate(108)"/><ellipse rx="14" ry="19" cy="-9" transform="rotate(180)"/><ellipse rx="14" ry="19" cy="-9" transform="rotate(252)"/><ellipse rx="14" ry="19" cy="-9" transform="rotate(324)"/>
+    </g>
+    <circle r="9" fill="var(--rose)" stroke="var(--rose2)" stroke-width="1"/>
+    <path d="M0-7C7-7 7 3 0 3C-4 3-4-2 0-2" fill="none" stroke="var(--rose2)" stroke-width="1.4" stroke-linecap="round"/>
+  </symbol>
+  <g id="leaf"><path d="M0 0C14-14 38-12 56 0C38 12 14 14 0 0Z" fill="var(--leaf)"/><path d="M2 0H50" stroke="var(--card)" stroke-opacity=".5" stroke-width="1"/></g>
+  <symbol id="petal" viewBox="0 0 20 32"><path d="M10 0C21 8 21 24 10 32C-1 24-1 8 10 0Z"/></symbol>
+  <symbol id="rings" viewBox="0 0 120 66">
+    <circle cx="44" cy="40" r="22" fill="none" stroke="var(--gold)" stroke-width="5"/>
+    <circle cx="76" cy="40" r="22" fill="none" stroke="var(--gold)" stroke-width="5"/>
+    <path d="M55 20.9A22 22 0 0 1 63.05 29" fill="none" stroke="var(--card)" stroke-width="9"/>
+    <path d="M55 20.9A22 22 0 0 1 63.05 29" fill="none" stroke="var(--gold)" stroke-width="5"/>
+    <path d="M65 59.05A22 22 0 0 1 56.95 51" fill="none" stroke="var(--card)" stroke-width="9"/>
+    <path d="M65 59.05A22 22 0 0 1 56.95 51" fill="none" stroke="var(--gold)" stroke-width="5"/>
+    <polygon class="gem" points="44,2 51,10 44,18 37,10" fill="var(--gem)" stroke="var(--gold)" stroke-width="2" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="floral" viewBox="0 0 200 200">
+    <use href="#leaf" transform="translate(196,24) rotate(125) scale(1.5)"/>
+    <use href="#leaf" transform="translate(180,6) rotate(168) scale(1.4)"/>
+    <use href="#leaf" transform="translate(198,60) rotate(92) scale(1.2)"/>
+    <use href="#rose" x="104" y="2" width="92" height="92"/>
+    <use href="#rose" x="48" y="-4" width="60" height="60"/>
+    <use href="#rose" x="142" y="86" width="52" height="52"/>
+    <g fill="var(--gold)"><circle cx="40" cy="64" r="3"/><circle cx="62" cy="78" r="2.4"/><circle cx="128" cy="118" r="3"/><circle cx="150" cy="150" r="2.4"/></g>
+  </symbol>
+</defs>
+</svg>
+
+<div class="bg"></div>
+<div class="fx" id="fx"></div>
+
+<!-- شاشة الغلاف -->
+<section id="intro" class="screen">
+  <div class="env">
+    <svg class="rings" viewBox="0 0 120 66"><use href="#rings"/></svg>
+    <p class="mono" id="mono"></p>
+    <p class="to">دعوة خاصة إلى</p>
+    <p class="guest" id="guest">الأهل والأحبة</p>
+    <button id="open">فتح الدعوة</button>
+  </div>
+</section>
+
+<!-- صفحة الدعوة -->
+<main id="page" class="screen">
+  <article class="card">
+    <svg class="corner" viewBox="0 0 200 200"><use href="#floral"/></svg>
+    <svg class="corner b" viewBox="0 0 200 200"><use href="#floral"/></svg>
+    <p class="bism">بسم الله الرحمن الرحيم</p>
+    <p class="verse" id="verse"></p>
+    <svg class="rg" viewBox="0 0 120 66"><use href="#rings"/></svg>
+    <h1>دعوة عقد قران</h1>
+    <div class="orn"><svg viewBox="-50 -50 100 100"><use href="#rose"/></svg></div>
+    <p class="sub" id="hostLine"></p>
+    <p class="names"><span id="groom"></span><i>و</i><span id="bride"></span></p>
+    <p class="fam" id="fam"></p>
+    <div class="count" id="count"></div>
+    <div class="row"><small>التاريخ</small><div id="dateText"></div></div>
+    <div class="row"><small>الوقت</small><div id="timeText"></div></div>
+    <div class="row"><small>المكان</small><div id="venue"></div><p id="address"></p></div>
+    <div class="actions">
+      <a class="btn" id="mapBtn" target="_blank" rel="noopener">الموقع على الخريطة</a>
+      <a class="btn alt" id="rsvpBtn" target="_blank" rel="noopener">تأكيد الحضور</a>
+    </div>
+    <p class="foot" id="closing"></p>
+  </article>
+</main>
+
+<script>
+/* ============================================================
+   عدّل البيانات هنا فقط — بقية الكود لا تحتاج إلى تغيير
+   ============================================================ */
+const INVITE = {
+  groom: "أحمد",
+  bride: "سارة",
+  groomFamily: "عائلة [اسم عائلة العريس]",
+  brideFamily: "عائلة [اسم عائلة العروس]",
+  hostLine: "يتشرف أهل العروسين بدعوتكم لحضور مراسم عقد القران",
+
+  date: "2026-12-25T18:00:00",   // صيغة: السنة-الشهر-اليوم T الساعة:الدقيقة (توقيت محلي)
+  venue: "قاعة [اسم القاعة]",
+  address: "بغداد، [الحي / الشارع]",
+  mapUrl: "https://maps.google.com/?q=Baghdad",   // رابط الموقع من خرائط جوجل
+  whatsapp: "9647700000000",     // الرقم بصيغة دولية بدون + أو أصفار
+  rsvpMessage: "السلام عليكم، أؤكد حضوري لعقد القران.",
+
+  verse: "وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً",
+  closing: "بحضوركم تكتمل فرحتنا",
+  accent: "",       // اختياري: لون ذهبي مخصص مثل "#8b5e3c"
+  roseColor: "",    // اختياري: لون الورد مثل "#c0392b"
+  petals: 16        // عدد البتلات المتساقطة (0 لإيقافها)
+};
+/* لدعوة شخص بالاسم: أضف ?guest=الاسم في آخر الرابط */
+/* ============================================================ */
+
+const $ = id => document.getElementById(id);
+const R = document.documentElement.style;
+const D = new Date(INVITE.date);
+
+$("groom").textContent = INVITE.groom;
+$("bride").textContent = INVITE.bride;
+$("mono").textContent = INVITE.groom.charAt(0) + " ❦ " + INVITE.bride.charAt(0);
+$("verse").textContent = INVITE.verse;
+$("hostLine").textContent = INVITE.hostLine;
+$("fam").textContent = INVITE.groomFamily + " • " + INVITE.brideFamily;
+$("venue").textContent = INVITE.venue;
+$("address").textContent = INVITE.address;
+$("closing").textContent = INVITE.closing;
+$("dateText").textContent = new Intl.DateTimeFormat("ar-IQ-u-nu-latn", {weekday:"long", day:"numeric", month:"long", year:"numeric"}).format(D);
+$("timeText").textContent = new Intl.DateTimeFormat("ar-IQ-u-nu-latn", {hour:"numeric", minute:"2-digit", hour12:true}).format(D);
+$("mapBtn").href = INVITE.mapUrl;
+$("rsvpBtn").href = "https://wa.me/" + INVITE.whatsapp + "?text=" + encodeURIComponent(INVITE.rsvpMessage);
+if (INVITE.accent) R.setProperty("--gold", INVITE.accent);
+if (INVITE.roseColor) { R.setProperty("--rose", INVITE.roseColor); R.setProperty("--rose2", INVITE.roseColor); R.setProperty("--rose3", INVITE.roseColor); }
+
+const g = new URLSearchParams(location.search).get("guest");
+if (g) $("guest").textContent = g.slice(0, 60);
+
+/* الخلفية المتحركة: بتلات ورد متساقطة + لمعان */
+const rnd = (a, b) => a + Math.random() * (b - a);
+if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  const fx = $("fx");
+  for (let i = 0; i < INVITE.petals; i++) {
+    const p = document.createElement("span"), s = rnd(12, 26);
+    p.className = "p";
+    p.style.cssText = "left:" + rnd(0, 100) + "%;width:" + s + "px;height:" + s * 1.5 + "px;animation-duration:" + rnd(12, 24) + "s;animation-delay:-" + rnd(0, 24) + "s;--dx:" + rnd(-60, 60) + "px";
+    p.innerHTML = '<svg viewBox="0 0 20 32"><use href="#petal"/></svg>';
+    fx.appendChild(p);
+  }
+  for (let i = 0; i < 14; i++) {
+    const t = document.createElement("span");
+    t.className = "s";
+    t.style.cssText = "left:" + rnd(0, 100) + "%;top:" + rnd(0, 100) + "%;animation-delay:-" + rnd(0, 4) + "s;animation-duration:" + rnd(2.5, 5) + "s";
+    fx.appendChild(t);
+  }
+}
+
+function tick(){
+  const ms = D - Date.now();
+  if (ms <= 0){ $("count").innerHTML = '<b style="color:var(--gold)">حان الموعد 🤍</b>'; return; }
+  const d = Math.floor(ms/864e5), h = Math.floor(ms/36e5)%24, m = Math.floor(ms/6e4)%60;
+  $("count").innerHTML = [[d,"يوم"],[h,"ساعة"],[m,"دقيقة"]].map(x => "<div><b>"+x[0]+"</b><span>"+x[1]+"</span></div>").join("");
+}
+tick(); setInterval(tick, 30000);
+
+$("open").onclick = () => {
+  $("intro").classList.add("hide");
+  $("page").classList.add("show");
+  window.scrollTo(0,0);
+};
+</script>
+</body>
+</html>
