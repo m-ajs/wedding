@@ -53,6 +53,7 @@ h1{font-family:'Amiri',serif;font-size:34px;margin:0 0 4px;background:linear-gra
 .names{font-family:'Amiri',serif;font-size:32px;font-weight:700;line-height:1.5;margin:0 0 6px}
 .names i{display:block;font-style:normal;color:var(--rose);font-size:22px}
 .fam{color:var(--muted);font-size:14px;margin:0 0 22px}
+.cdl{color:var(--rose);font-size:15px;margin:0 0 8px}
 .count{display:flex;gap:10px;justify-content:center;margin:0 0 22px}
 .count div{flex:1;max-width:84px;border:1px solid var(--line);border-radius:14px;padding:10px 0;background:var(--bg)}
 .count b{display:block;font-size:24px;color:var(--gold)}
@@ -131,7 +132,8 @@ h1{font-family:'Amiri',serif;font-size:34px;margin:0 0 4px;background:linear-gra
     <p class="sub" id="hostLine"></p>
     <p class="names"><span id="groom"></span><i>و</i><span id="bride"></span></p>
     <p class="fam" id="fam"></p>
-    <div class="count" id="count"></div>
+<p class="cdl">الوقت المتبقي</p>
+<div class="count" id="count"></div>
     <div class="row"><small>التاريخ</small><div id="dateText"></div></div>
     <div class="row"><small>الوقت</small><div id="timeText"></div></div>
     <div class="row"><small>المكان</small><div id="venue"></div><p id="address"></p></div>
@@ -165,7 +167,8 @@ const INVITE = {
   closing: "بحضوركم تكتمل فرحتنا",
   accent: "",       // اختياري: لون ذهبي مخصص مثل "#8b5e3c"
   roseColor: "",    // اختياري: لون الورد مثل "#c0392b"
-  petals: 16        // عدد البتلات المتساقطة (0 لإيقافها)
+    petals: 16,       // عدد البتلات المتساقطة (0 لإيقافها)
+  initials: "M ❦ Z" // الحرفان على الغلاف، اتركه فارغاً "" للأخذ التلقائي
 };
 /* لدعوة شخص بالاسم: أضف ?guest=الاسم في آخر الرابط */
 /* ============================================================ */
@@ -176,7 +179,7 @@ const D = new Date(INVITE.date);
 
 $("groom").textContent = INVITE.groom;
 $("bride").textContent = INVITE.bride;
-$("mono").textContent = INVITE.groom.charAt(0) + " ❦ " + INVITE.bride.charAt(0);
+$("mono").textContent = INVITE.initials || (INVITE.groom.charAt(0) + " ❦ " + INVITE.bride.charAt(0));
 $("verse").textContent = INVITE.verse;
 $("hostLine").textContent = INVITE.hostLine;
 $("fam").textContent = INVITE.groomFamily + " • " + INVITE.brideFamily;
@@ -228,3 +231,4 @@ $("open").onclick = () => {
 </script>
 </body>
 </html>
+
